@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Your custom CSS styles here */
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+    html {
+      height: 100%;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Raleway', sans-serif;
+      background: linear-gradient(135deg, #ffffff, #ff6b6b, #6b66ff, #00e676, #87ff2a, #0f9bf4, #007bff, #ff3d67, #ff9f5f, #18ffff, #2979ff, #536dfe);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+    }
+
+    .login-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background: rgba(128, 128, 128, 0.2); /* Transparent gray background */
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      text-align: center;
+    }
+
+    .login-box form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .login-box label {
+      color: white;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .login-box input {
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .login-button {
+      padding: 10px 20px;
+      background-color: transparent; /* Transparent background */
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+      text-transform: uppercase;
+      overflow: hidden;
+      transition: .5s;
+      margin-top: 20px;
+      letter-spacing: 4px;
+      position: relative;
+    }
+
+    .login-button span {
+      display: inline-block;
+      position: absolute;
+      background-color: yellow; /* Yellow glow color */
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: glowing 2s infinite;
+    }
+
+    @keyframes glowing {
+      0%, 100% {
+        transform: translateX(0) translateY(0);
+        opacity: 0.4;
+      }
+      25% {
+        transform: translateX(10px) translateY(-10px);
+        opacity: 0.7;
+      }
+      50% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+      }
+      75% {
+        transform: translateX(-10px) translateY(10px);
+        opacity: 0.7;
+      }
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      25% {
+        background-position: 100% 50%;
+      }
+      50% {
+        background-position: 50% 100%;
+      }
+      75% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Login</h2>
+    <form>
+      <div class="user-box">
+        <label>Username</label>
+        <input type="text" name="" required="">
+      </div>
+      <div class="user-box">
+        <label>Password</label>
+        <input type="password" name="" required="">
+      </div>
+      <a href="home.html" class="login-button">Login<span></span></a>
+    </form>
+  </div>
+  <!-- Bootstrap JS (optional) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
