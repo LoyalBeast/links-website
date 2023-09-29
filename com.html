@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+  body {
+    background: linear-gradient(135deg, blue, red, darkblue, darkred, white, black);
+    background-size: 300% 300%;
+    animation: gradientAnimation 10s linear infinite, moveAnimation 10s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+
+  @keyframes moveAnimation {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 0 100%;
+    }
+  }
+  
+  .community-page {
+    width: 400px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .submenu {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+
+  .submenu img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .button {
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: yellow;
+    color: black;
+    border: 2px solid rgb(255, 0, 0); /* Red border */
+    font-weight: 700;
+    font-style: italic;
+  }
+
+</style>
+</head>
+<body>
+      <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="center">
+      <a class="navbar-brand" href="#">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="com.html">Community</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="set.html">Settings</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    
+  <div class="community-page">
+    <div class="submenu">
+      <img src="https://brandeps.com/icon-download/S/Shop-icon-vector-03.svg" alt="Shop">
+    <button class="button" data-toggle="modal" data-target="#shopModal" onclick="window.location.href='shop.html'">Shop</button>
+
+    </div>
+    <div class="submenu">
+      <img src="https://brandeps.com/icon-download/P/People-team-add-icon-vector-01.svg" alt="Guild">
+ <button class="button" data-toggle="modal" data-target="#guildModal" onclick="window.location.href='guild.html'">Guild</button>
+    </div>
+<div class="submenu">
+  <img src="https://brandeps.com/icon-download/U/User-chat-icon-vector-01.svg" alt="Community">
+  <button class="button" onclick="window.location.href='https://svchatsv.netlify.app/'">Community</button>
+</div>I've added
+
+  <!-- Modals -->
+  <div class="modal fade" id="shopModal" tabindex="-1" role="dialog" aria-labelledby="shopModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="shopModalLabel">Shop Menu</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Content for the Shop submenu goes here.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="guildModal" tabindex="-1" role="dialog" aria-labelledby="guildModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="guildModalLabel">Guild Menu</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Content for the Guild submenu goes here.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="communityModal" tabindex="-1" role="dialog" aria-labelledby="communityModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="communityModalLabel">Community Menu</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Content for the Community submenu goes here.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll(".button");
+    
+    buttons.forEach(button => {
+      button.addEventListener("mousedown", () => {
+        button.classList.add("active");
+      });
+
+      button.addEventListener("mouseup", () => {
+        button.classList.remove("active");
+      });
+    });
+  </script>
+</body>
+</html>
