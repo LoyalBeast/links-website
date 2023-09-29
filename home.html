@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Raleway', sans-serif;
+      margin: 10;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 10;
+      left: -10;
+      width: 100%;
+      background: translucent;
+      border: none;
+      z-index: 1000;
+    }
+
+    .navbar-dark .navbar-toggler-icon {
+      background-size: 100%;
+    }
+
+    .top-image-container {
+      position: relative;
+      overflow: hidden;
+      max-height: 500vh;
+      z-index: 10;
+    }
+
+    .top-image {
+      width: 100%;
+      height: 500%;
+      object-fit: 500%;
+    }
+
+    .animated-border {
+      position: absolute;
+      width: 200%;
+      height: 10px;
+      top: 10;
+      left: 0;
+      background: linear-gradient(135deg, red, green, blue ,indigo ,black , white);
+      background-size: 100% 200%;
+      animation: borderAnimation 1s linear infinite;
+    }
+
+    @keyframes borderAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      25% {
+        background-position: 100% 50%;
+      }
+      50% {
+        background-position: 50% 100%;
+      }
+      75% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .section {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: blue;
+      padding: 50px;
+      text-align: center;
+      min-height: calc(100vh - 56px); /* Adjust for navbar height */
+      font-family: 'Raleway', sans-serif;
+      border-top: 2px solid white;
+      margin-top: 56px; /* Add margin for the navbar height */
+    }
+
+    .section h1 {
+      font-size: 34px;
+      color: white;
+    }
+
+    .nav-link.active {
+      color: cyan;
+    }
+
+    .active .top-image-container {
+      display: block;
+    }
+
+    .active .animated-border {
+      display: block;
+    }
+  </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="56">
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="com.html">Community</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="set.html">Settings</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="top-image-container">
+    <div class="animated-border"></div>
+    <img src="https://p4.wallpaperbetter.com/wallpaper/142/751/831/landscape-anime-digital-art-fantasy-art-wallpaper-preview.jpg" alt="Your Image" class="top-image" height="500" width="200">
+  </div>
+
+  <div class="section active" id="home-section">
+    <h1 class="animated-text">Home</h1>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

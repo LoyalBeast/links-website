@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <style>
+        /* Your custom styling here */
+        body {
+            font-family: 'Raleway', Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .container.dark-mode {
+            background-color: #3d3d3d;
+            color: #ffffff;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-image: url('https://media.discordapp.net/attachments/932317292778356816/1156914604094521344/20230814_190030_0000.png?ex=6516b430&is=651562b0&hm=82582329d5142bc4b3a69ce6c479d3adbebdd30a788a0c7874df197a112da68d&');
+            background-size: cover;
+            border: 2px solid transparent;
+            margin-right: 20px;
+            position: relative;
+        }
+
+        .profile-image:before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 3px solid #00bcd4;
+            border-radius: 50%;
+            animation: borderAnimation 3s infinite;
+        }
+
+        @keyframes borderAnimation {
+
+            0%,
+            100% {
+                border-color: #000;
+            }
+
+            50% {
+                border-color: #00bcd4;
+            }
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .profile-info.dark-mode {
+            background-color: #3d3d3d;
+            color: #ffffff;
+        }
+
+        .profile-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #888;
+        }
+
+        .profile-name.dark-mode {
+            background-color: #3d3d3d;
+            color: #ffffff;
+        }
+
+        .profile-uid {
+            font-size: 16px;
+            color: #888;
+        }
+
+        .profile-uid.dark-mode {
+            background-color: #3d3d3d;
+            color: #afafaf;
+        }
+
+        .setting-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .setting-section h2 {
+            color: #007bff;
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        .submenu {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .submenu.dark-mode {
+            background-color: #3d3d3d;
+            color: #ffffff;
+        }
+
+        .submenu-item1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 18px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            width: 120px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .submenu-item2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 18px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            width: 120px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .submenu-item3 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 18px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            width: 120px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .submenu-item4 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 18px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            width: 120px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .submenu-item5 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 18px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            width: 120px;
+            text-align: center;
+            padding: 10px;
+        }
+
+
+        .submenu-item1.dark-mode {
+            background-color: #3d3d3d;
+            color: #ffffff;
+        }
+
+        .submenu-item2.dark-mode {
+            background-color: #3d3d3d;
+            color: #ffffff;
+        }
+
+        .submenu-item3.dark-mode {
+            background-color: #3d3d3d;
+            color: #ffffff;
+        }
+
+        .submenu-item4.dark-mode {
+            background-color: #3d3d3d;
+            color: #ffffff;
+        }
+
+        .submenu-item5.dark-mode {
+            background-color: #3d3d3d;
+            color: #ffffff;
+        }
+
+        .submenu-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .submenu-icon.dark-mode {
+            background-color: #3d3d3d;
+            color: #ffffff;
+        }
+
+        .submenu-item1:hover {
+            color: #007bff;
+        }
+
+        .submenu-item2:hover {
+            color: #007bff;
+        }
+
+        .submenu-item3:hover {
+            color: #007bff;
+        }
+
+        .submenu-item4:hover {
+            color: #007bff;
+        }
+
+        .submenu-item5:hover {
+            color: #007bff;
+        }
+
+        .toggle-switch {
+            width: 40px;
+            height: 20px;
+            background-color: #ddd;
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-switch:before {
+            content: "";
+            width: 18px;
+            height: 18px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            transition: transform 0.3s;
+        }
+
+        .switch input[type="checkbox"] {
+            display: none;
+        }
+
+        input[type="checkbox"]:checked+.toggle-switch {
+            background-color: #007bff;
+        }
+
+        input[type="checkbox"]:checked+.toggle-switch:before {
+            transform: translateX(20px);
+        }
+
+        .dark-mode {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .embed-container {
+            background-color: #ffffff;
+            padding: 10px;
+            margin-top: 20px;
+            overflow: hidden;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        .embed-container.dark-mode {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .setting-section.dark-mode {
+            background-color: #3d3d3d;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="center"></div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse nav-light" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html" style="color: #000;">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="com.html" style="color: #000;">Community</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="set.html" style="color: #000;">Settings</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <div class="main-box">
+        <div class="embed-container">
+            <div class="container">
+                <div class="profile-header">
+                    <div class="profile-image"></div>
+                    <div class="profile-info">
+                        <div class="profile-name">Supreme Verse</div>
+                        <div class="profile-uid">UID: 260159104</div>
+                    </div>
+                </div>
+
+                <h1 class="text-center mb-4">Settings</h1>
+
+                <section class="setting-section">
+                    <h2>Manage User Profile</h2>
+                    <div class="submenu">
+                        <div class="submenu-item1">
+                            <i class="fas fa-shield-alt submenu-icon"></i>
+                            <span>Partner Programme</span>
+                        </div>
+                        <div class="submenu-item2">
+                            <i class="fas fa-user submenu-icon"></i>
+                            <span>Manage Account</span>
+                        </div>
+                        <div class="submenu-item3">
+                            <i class="fas fa-gamepad submenu-icon"></i>
+                            <span>Create Game</span>
+                        </div>
+                        <div class="submenu-item4">
+                            <i class="fas fa-trophy submenu-icon"></i>
+                            <span>Ranking</span>
+                        </div>
+                        <label for="darkMode" class="submenu-item5 switch">
+                            <i class="fas fa-moon submenu-icon"></i>
+                            <span>Dark Mode</span>
+                            <input type="checkbox" id="darkMode" class="toggle-checkbox">
+                            <span class="toggle-switch"></span>
+                        </label>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const darkModeToggle = document.getElementById("darkMode");
+            const body = document.body;
+            const embedContainer = document.querySelector(".embed-container");
+            const settingsection = document.querySelector(".setting-section");
+            const profileinfo = document.querySelector(".profile-info");
+            const profilename = document.querySelector(".profile-name");
+            const profileuid = document.querySelector(".profile-uid");
+            const submenu = document.querySelector(".submenu");
+            const submenuitem1 = document.querySelector(".submenu-item1");
+            const submenuitem2 = document.querySelector(".submenu-item2");
+            const submenuitem3 = document.querySelector(".submenu-item3");
+            const submenuitem4 = document.querySelector(".submenu-item4");
+            const submenuitem5 = document.querySelector(".submenu-item5");
+            const container = document.querySelector(".container");
+
+            darkModeToggle.addEventListener("change", () => {
+                body.classList.toggle("dark-mode");
+                embedContainer.classList.toggle("dark-mode");
+                settingsection.classList.toggle("dark-mode");
+                profileinfo.classList.toggle("dark-mode");
+                profilename.classList.toggle("dark-mode");
+                profileuid.classList.toggle("dark-mode");
+                submenu.classList.toggle("dark-mode");
+                submenuitem1.classList.toggle("dark-mode");
+                submenuitem2.classList.toggle("dark-mode");
+                submenuitem3.classList.toggle("dark-mode");
+                submenuitem4.classList.toggle("dark-mode");
+                submenuitem5.classList.toggle("dark-mode");
+                container.classList.toggle("dark-mode");
+            });
+        });
+    </script>
+</body>
+
+</html>
